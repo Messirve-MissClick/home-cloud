@@ -20,3 +20,5 @@ To start the server you can use the following command:
 If you want the server to start automatically in the system boot you can use enable the service with
 
 `sudo systemctl enable mongodb`
+
+To get into MongoDB CLI use `mongo`
