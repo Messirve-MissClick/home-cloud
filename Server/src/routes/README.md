@@ -18,4 +18,4 @@ To upload files `/upload/:dir` **POST**
 
 List the dir content `/dir/:dir` **GET**`
 
-# Should Create a rote to download the files
+# Should Create a route to download the files
