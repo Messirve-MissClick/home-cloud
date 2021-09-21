@@ -9,7 +9,9 @@
   "author": "missclick",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2"
   },
   "devDependencies": {
     "chai": "^4.3.4",
