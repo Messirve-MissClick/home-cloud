@@ -3,23 +3,40 @@ const router = express.Router();
 
 // import middlewares 
 const checkRequest = require('../middlewares/authentication/checkReq.js');
+const genUserData = require('../middlewares/authentication/genUserData.js');
+const cookieParser = require('cookie-parser');
 
-const HashPassword = require('../middlewares/authentication/encript.js').hashpassword;
-const HashUserId = require('../middlewares/authentication/encript.js').hashUserId;
+// Register
+const HashPassword = require('../middlewares/cypher/hashPasswd.js');
+const HashUserId = require('../middlewares/cypher/hashUserId.js');
 const checkUser = require('../middlewares/authentication/checkUser.js');
 const register = require('../middlewares/authentication/register.js');
 
+// Login
+const getUser = require('../middlewares/authentication/getUser.js');
+const comparePsswd = require('../middlewares/cypher/comparePasswd.js');
+
 router.use(express.json());
+router.use(cookieParser())
 router.use(checkRequest);
+router.use(genUserData);
 
-router.get('/', (req, res) => res.sendStatus(200).send('AuthRoute'));
+router.get('/', (req, res) => {
+    // res.send('OK')});
+    res.cookie('name', 'express').send('hola')}); // sets a cookie
 
-// Register new user --> json with mail, username, password
+// Register new user --> json with username, password  returns session cookie and cookie text
 router.post('/register',checkUser ,HashPassword, register, HashUserId, (req, res) => {
-    res.send(JSON.stringify(req.authToken));
+    let cookie = JSON.stringify(req.UserData.authToken)
+    res.cookie('session',cookie).send(cookie);
 });
 
-// Login --> json with mail and password
-router.post('/login',(req,res) => res.sendStatus(200).send('OK'));
+// Login --> json with mail and password returns session cookie and cookie text
+router.post('/login',getUser, comparePsswd, HashUserId,(req,res) => {
+    let cookie = JSON.stringify(req.UserData.authToken)
+    res.cookie('session',cookie).send(cookie);
+});
+
+
 
 module.exports = router;

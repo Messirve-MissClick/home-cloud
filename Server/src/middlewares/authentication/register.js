@@ -9,7 +9,7 @@ function registerUser(req ,res, next) {
             res.sendStatus(500);
             next('route')
         }
-        req.token = userID;
+        req.UserData._id = userID;
         next();
     });
     

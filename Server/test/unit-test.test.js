@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const UserByMail = require('../src/controllers/getUser.js');
+const UserByMail = require('../src/controllers/getDbUser.js');
 const checkMail = require('../src/middlewares/authentication/checkUser');
 
 const addValue = (a, b) => a + b ;

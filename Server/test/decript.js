@@ -10,3 +10,6 @@
 // let x = bcrypt.compareSync(myPlaintextPassword, hash)
 
 //  // console.log(x);
+
+// let x = JSON.stringify('hola')
+// console.log(x)

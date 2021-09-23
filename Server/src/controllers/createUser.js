@@ -13,9 +13,9 @@ function Register (credentials, fn){
 
         // register user and pass in DB
         dbo.collection(collection).insertOne(credentials, (err, result) => {
-            let id = JSON.stringify(result.insertedId).replace('"','').replace('"','')
+            // let id = JSON.stringify(result.insertedId).replace('"','').replace('"','')
             // need to repeat the replace to avioid a bug
-
+            let id = result.insertedId
             fn(err, id);
             db.close();
         });

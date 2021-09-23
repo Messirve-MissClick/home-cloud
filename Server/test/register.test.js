@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const chai = require('chai');
-const should = chai.should();
 const chaiHttp = require('chai-http');
 const app = require('../src/index.js').app;
 
@@ -69,6 +68,7 @@ describe('Testing /auth/register', () => {
         .end((req, res) => {
             let response = res.text
             let boolean = 59 < response.length < 63
+            chai.expect(res).to.have.cookie('session');
             chai.assert(boolean, true);
             done();
         });

@@ -1,4 +1,4 @@
-const getUser = require('../../controllers/getUser.js');
+const getUser = require('../../controllers/getDbUser.js');
 
 function userExists(req, res, next) {
 
