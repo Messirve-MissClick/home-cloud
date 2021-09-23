@@ -1,6 +1,7 @@
 const createUser = require('../../controllers/createUser.js');
 
 function registerUser(req ,res, next) {
+
     const credentials = req.body;
 
     createUser(credentials, (err, userID) => {
