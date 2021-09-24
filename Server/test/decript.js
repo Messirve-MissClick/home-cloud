@@ -1,15 +1,31 @@
-// const bcrypt = require('bcrypt');
-// const salt = '$2b$10$pEZLoOlHHLMtga5Ub5vZ5e'
-// const myPlaintextPassword = 'Spai422'
+// const crypto = require('crypto');
 
-// const hash = '$2b$10$pEZLoOlHHLMtga5Ub5vZ5efaiqilla2Ji669mVC5Jy5tuUeNGqgJa'
-// console.log(hash)
-// // const hash = ''
-// // const myPlaintextPassword = 'Spai422'
+// const algorithm = 'aes-256-ctr'; // store in .ENV file
+// const secretKey = 'vOVH6sdmpNWjRRIqCc8rdxs01lwHzfr3'; // Sotre in .ENV file
+// const iv = crypto.randomBytes(16);
 
-// let x = bcrypt.compareSync(myPlaintextPassword, hash)
+// const encrypt = (text) => {
 
-//  // console.log(x);
+//     const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
 
-// let x = JSON.stringify('hola')
-// console.log(x)
+//     const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
+
+//     return encrypted.toString('hex')
+// };
+
+// const decrypt = (hash) => {
+
+//     const decipher = crypto.createDecipheriv(algorithm, secretKey, Buffer.from(iv, 'hex'));
+
+//     const decrpyted = Buffer.concat([decipher.update(Buffer.from(hash, 'hex')), decipher.final()]);
+
+//     return decrpyted.toString();
+// };
+
+// let encrypted = encrypt('HOLA BUENAS');
+
+// console.log(encrypted);
+
+// let decripted = decrypt(encrypted);
+
+// console.log(decripted);

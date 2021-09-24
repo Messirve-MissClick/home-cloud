@@ -3,25 +3,27 @@
 · Architec Middleware route
 
 middlewares
-    authentication
-    Upload
-    download
+  authentication
+  Upload
+  download
 
 
 ------------ TODO --------
 
-· Create auth middleware
+· Create auth middleware DONE
 
 · Create /Upload Route
 
 · Create /List content or something like this
 
-· Create /Download content
+· Create /Download Route
+
+
+-------- Errors -------
 
 · Use ENV vars to the salt or search the way to 
   create the salt and save it
 
-· Create New Dir When user resgisters
 
 
 

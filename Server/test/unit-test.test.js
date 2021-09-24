@@ -1,8 +1,8 @@
-const assert = require('chai').assert;
-const UserByMail = require('../src/controllers/getDbUser.js');
-const checkMail = require('../src/middlewares/authentication/checkUser');
+// const assert = require('chai').assert;
+// const UserByMail = require('../src/controllers/getDbUser.js');
+// const checkMail = require('../src/middlewares/authentication/checkUser');
 
-const addValue = (a, b) => a + b ;
+// const addValue = (a, b) => a + b ;
 
 // describe('Test Test', () => {
 //     it('should return 2', () => { // Test Description
