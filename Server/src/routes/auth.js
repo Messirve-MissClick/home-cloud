@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 
 // crypto
 const HashPassword = require('../middlewares/cypher/hashPasswd.js');
-const HashUserId = require('../middlewares/cypher/cryptoCookie.js').hashUserId;
+// const HashUserId = require('../middlewares/cypher/cryptoCookie.js').hashUserId;
 const comparePsswd = require('../middlewares/cypher/comparePasswd.js');
 
 // Register
@@ -29,14 +29,14 @@ router.get('/', (req, res) => {
     res.cookie('name', 'express').send('hola')}); // sets a cookie
 
 // Register new user --> json with username, password  returns session cookie and cookie text
-router.post('/register',checkUser ,HashPassword, register,mkdir, HashUserId, (req, res) => {
-    let cookie = JSON.stringify(req.UserData.authToken)
+router.post('/register',checkUser ,HashPassword, register,mkdir, (req, res) => {
+    let cookie = JSON.stringify(req.UserData._id);
     res.cookie('session',cookie).send(cookie);
 });
 
 // Login --> json with mail and password returns session cookie and cookie text
-router.post('/login',getUser, comparePsswd, HashUserId,(req,res) => {
-    let cookie = JSON.stringify(req.UserData.authToken)
+router.post('/login',getUser, comparePsswd, (req,res) => {
+    let cookie = JSON.stringify(req.UserData._id)
     res.cookie('session',cookie).send(cookie);
 });
 

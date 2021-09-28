@@ -67,7 +67,7 @@ describe('Testing /auth/register', () => {
         password:'Spai422'})
         .end((req, res) => {
             let response = res.text
-            let boolean = 10 < response.length < 63
+            let boolean = 5 < response.length < 63
             chai.expect(res).to.have.cookie('session');
             chai.assert(boolean, true);
             done();

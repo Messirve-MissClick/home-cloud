@@ -2,6 +2,9 @@
 
 · Architec Middleware route
 
+/upload/PATH
+get UserID, create PATH, mover archivos => verificar PATH, verificar nombre de archivo
+
 middlewares
   authentication
   Upload
