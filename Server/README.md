@@ -23,5 +23,5 @@ If you want the server to start automatically in the system boot you can use ena
 
 Need to export NODE_ENV var
 ```bash
-export /home/username/storage
+export NODE_ENV=/home/espai422/Home-Cloud/Server/TESTROUTE/
 ```
