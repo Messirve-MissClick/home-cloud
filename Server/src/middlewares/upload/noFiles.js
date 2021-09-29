@@ -1,6 +1,6 @@
 function checkReqFiles(req, res, next) {
     if (!req.files){
-        res.send(400).json({
+        res.sendStatus(400).json({
             success:false,
             message:'No files in request'
         });

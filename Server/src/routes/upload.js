@@ -66,7 +66,7 @@ router.post('/mkdir/:path?', (req, res) => {
     const PathToCreate = `${process.env.NODE_ENV}/${user}/${ReqPath}`
 
     if (fs.existsSync(PathToCreate)) {
-        console.log('exists')
+        return res.sendStatus(400);
     } else {
         fs.mkdir(PathToCreate, err => {
             if (err) {
@@ -76,6 +76,16 @@ router.post('/mkdir/:path?', (req, res) => {
         });
     };
     res.send('dir has been created');
+});
+
+router.post('/rm/:path?', (req, res) => {
+    if (!req.params.path) return res.sendStatus(400);
+
+    const user = req.cookies.session;
+    const ReqPath = req.params.path.replace('-','/');
+    const remove = `${process.env.NODE_ENV}/${user}/${ReqPath}`
+
+    fs.rm(remove, options={recursive:true} ,() => res.sendStatus(200));
 });
 
 
