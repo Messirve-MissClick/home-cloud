@@ -19,7 +19,7 @@ export NODE_ENV=/home/Cloud
 ```
 Client
 ```bash
-REACT_APP_API_URL=http://192.168.1.75:4222
+export REACT_APP_API_URL=http://192.168.1.75:4222
 ```
 
 Remember to export each var in diferent terminals, if it will not run
