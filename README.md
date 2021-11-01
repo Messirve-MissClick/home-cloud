@@ -10,6 +10,26 @@ git clone https://github.com/espai422/home-cloud
 cd home-cloud/client/src
 tar -xzvf bootstrapTheme
 ```
+## MongoDB
+
+We are using a MongoDB database to store our users. You need to install and start a MongoDB server.
+
+#### Arch
+
+MongoDB is not in the oficial arch repo so you will need to install it from the **AUR**.
+
+`yay -S mongodb-bin`
+
+Once is istalled you will ned to start the server.
+To start the server you can use the following command:
+
+`sudo systemctl start mongodb`
+
+If you want the server to start automatically in the system boot you can use enable the service with
+
+`sudo systemctl enable mongodb`
+
+
 ## Dependences
 There are only a nom dependeces so you can go to the root of each server an run npm install
 
