@@ -10,7 +10,7 @@ git clone https://github.com/espai422/home-cloud
 cd home-cloud/client/src
 tar -xzvf bootstrapTheme
 ```
-
+## Set-Up
 Once the bootstrap theme is extracted, you need to export 3 ENV VARS for the server and 1 for the client
 Values ar only an exaple
 Server
