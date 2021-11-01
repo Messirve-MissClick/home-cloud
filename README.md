@@ -3,6 +3,8 @@ The cloud at home
 
 ## Instalation
 
+First of all you need to clone this repo and unzip the bootstrap theme
+
 ```bash
 git clone https://github.com/espai422/home-cloud
 cd home-cloud/client/src
